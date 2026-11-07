@@ -67,7 +67,8 @@ def train_model_ZuCo(dataloaders, device, model, criterion, optimizer, scheduler
 
             # Iterate over data.
             for input_word_eeg_features, seq_lens, input_masks, input_mask_invert, target_ids, target_mask, sentiment_labels, sent_level_EEG in tqdm(dataloaders[phase]):
-                
+                print('input masks')
+                print(input_masks)
                 # input_word_eeg_features = input_word_eeg_features.to(device).float()
                 # input_masks = input_masks.to(device)
                 # input_mask_invert = input_mask_invert.to(device)
@@ -224,7 +225,7 @@ if __name__ == '__main__':
     args = get_config('train_sentiment_textbased')
 
     ''' config param'''
-
+    print('aaaa')
     num_epoch = args['num_epoch']
     # lr = 1e-3 # Bert, RoBerta
     # lr = 1e-4 # Bart
